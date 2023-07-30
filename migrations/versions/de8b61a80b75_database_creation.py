@@ -1,8 +1,8 @@
 """Database Creation
 
-Revision ID: 1994b603c439
+Revision ID: de8b61a80b75
 Revises: 
-Create Date: 2023-07-30 19:03:08.321149
+Create Date: 2023-07-30 19:17:33.508700
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1994b603c439'
+revision = 'de8b61a80b75'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -43,7 +43,7 @@ def upgrade() -> None:
     sa.Column('quantity', sa.String(), nullable=True),
     sa.Column('figi', sa.String(), nullable=True),
     sa.Column('instrument_type', sa.String(), nullable=True),
-    sa.Column('date', sa.TIMESTAMP(), nullable=True),
+    sa.Column('date', sa.TIMESTAMP(timezone=True), nullable=True),
     sa.Column('type', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
