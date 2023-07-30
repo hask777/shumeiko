@@ -1,13 +1,7 @@
 import sys
 sys.path.append("..")
 
-
-from datetime import datetime
-from enum import Enum
-from typing import List, Optional, Union
-
 from fastapi_users import fastapi_users, FastAPIUsers
-from pydantic import BaseModel, Field
 
 from fastapi import FastAPI, Request, status, Depends
 from fastapi.encoders import jsonable_encoder
