@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON
+from sqlalchemy import Boolean, MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON
 
 metadata = MetaData()
 
@@ -14,10 +14,13 @@ role = Table(
 user = Table(
     "user",
     metadata,
-    Column("id", Integer, primary_key=True, index=True),
+    Column("id", Integer, primary_key=True),
     Column("email", String, nullable=False),
     Column("username", String, nullable=False),
-    Column("password", String, nullable=False),
-    Column("register_at", TIMESTAMP, default=datetime.utcnow), # function cant be used!
-    Column("role_id", Integer, ForeignKey("role.id")) # reference to roles table -> id column
+    Column("registered_at", TIMESTAMP, default=datetime.utcnow),
+    Column("role_id", Integer, ForeignKey(role.c.id)),
+    Column("hashed_password", String, nullable=False),
+    Column("is_active", Boolean, default=True, nullable=False),
+    Column("is_superuser", Boolean, default=False, nullable=False),
+    Column("is_verified", Boolean, default=False, nullable=False),
 )

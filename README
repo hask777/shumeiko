@@ -14,3 +14,4 @@ Alembic commands:
 - alembic init migrations
 - alembic revision --autogenerate -m "Database Creation"
 - alembic upgrade {revision hash} 
+- alembic head {revision} # update for last

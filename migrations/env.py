@@ -5,7 +5,6 @@ from sqlalchemy import pool
 
 from alembic import context
 
-# Added
 from config import DB_HOST, DB_PORT, DB_USER, DB_NAME, DB_PASS
 from models.models import metadata
 
@@ -69,7 +68,7 @@ def run_migrations_online() -> None:
 
     """
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
+        config.get_section(config.config_ini_section),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
