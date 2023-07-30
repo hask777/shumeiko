@@ -19,5 +19,5 @@ users = Table(
     Column("username", String, nullable=False),
     Column("password", String, nullable=False),
     Column("register_at", TIMESTAMP, default=datetime.utcnow), # function cant be used!
-    Column("role_id", Integer, ForeignKey("roles.id"))
+    Column("role_id", Integer, ForeignKey("roles.id")) # reference to roles table -> id column
 )
