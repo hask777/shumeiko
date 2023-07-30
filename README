@@ -1,0 +1,10 @@
+PostgreSQL inter:
+- sudo -i -u postgres # first commnad
+- psql # enter psql cli
+- \q # exit psql
+- sudo -u postgres psql # Accessing a Postgres Prompt Without Switching Accounts
+- createuser --interactive # If you are logged in as the postgres account, you can create a new user by typing:
+- sudo -u postgres createuser --interactive # If, instead, you prefer to use sudo for each command without switching from your normal account, type:
+- createdb sammy # create new db
+- sudo -u postgres createdb sammy # If, instead, you prefer to use sudo for each command without switching from your normal account, you would type:
+- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04#accessing-a-postgres-prompt-without-switching-accounts
