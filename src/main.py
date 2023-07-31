@@ -10,7 +10,8 @@ from auth.schemas import UserCreate, UserRead
 from operations.router import router as router_operation
 from tasks.router import router as router_tasks
 from pages.router import router as router_pages
- 
+from chat.router import router as router_chat
+
 app = FastAPI(
     title="Trading App"
 )
@@ -32,9 +33,11 @@ app.include_router(
 app.include_router(router_operation)
 app.include_router(router_tasks)
 app.include_router(router_pages)
+app.include_router(router_chat)
 
 origins = [
-    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
 ]
 
 app.add_middleware(
